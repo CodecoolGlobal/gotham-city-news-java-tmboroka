@@ -92,6 +92,7 @@ To run this project, you need to have the following:
 :three: You can observe the simulation in the Terminal
 
 <h3>2.option:</h3>
+<div id="prerequisites"></div>
 ### Prerequisites :ballot_box_with_check:
 To run this project, you need to have the following:
 
