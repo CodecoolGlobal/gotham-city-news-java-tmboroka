@@ -13,21 +13,10 @@ public class GothamCity1Hour {
 
     private int resources;
     private CharacterFactory characterFactory;
-    public GothamCity1Hour(int resources) {
+
+    public GothamCity1Hour(int resources, CharacterFactory characterFactory) {
         this.resources = resources;
-        this.characterFactory = getCurrentFactory();
-    }
-
-    private List<CharacterFactory> createFactoryList(){
-        AirCharacterFactory airCharacterFactory = new AirCharacterFactory();
-        WaterCharacterFactory waterCharacterFactory = new WaterCharacterFactory();
-        LandCharacterFactory landCharacterFactory = new LandCharacterFactory();
-        return List.of(airCharacterFactory, waterCharacterFactory, landCharacterFactory);
-    }
-
-    private CharacterFactory getCurrentFactory(){
-        FactoryProducer factoryProducer = new FactoryProducer(createFactoryList());
-        return factoryProducer.pickFactory();
+        this.characterFactory = characterFactory;
     }
 
     private Villain createVillain(int iterationLevel){
@@ -42,12 +31,15 @@ public class GothamCity1Hour {
         return characterFactory.createSuperhero(iterationLevel);
     }
 
-    private void fight(Villain villain, Superhero superhero){
+    private int fight(Villain villain, Superhero superhero){
+        int retrieved = 0;
         if(superhero.getStrength() > villain.getStrength()){
-            resources = resources + villain.getPocketSize();
+            retrieved = villain.getPocketSize();
             System.out.println("Hero won");
         } else {
-        System.out.println("Villain won");}
+        System.out.println("Villain won");
+        }
+        return retrieved;
     }
 
     public void oneHour(int iterationLevel){
@@ -60,8 +52,8 @@ public class GothamCity1Hour {
         System.out.println(characterFactory.getCharacterType() + " hero came to save the city");
         System.out.println("Hero strength: " + currentHero.getStrength() + "\n Villain strength: " + currentVillain.getStrength());
 
-        fight(currentVillain, currentHero);
-
+        int retrievedResources = fight(currentVillain, currentHero);
+        resources += retrievedResources;
         System.out.println("Gold in the end of the day: " + resources);
         System.out.println("\n-------------END-------------\n");
     }

@@ -10,7 +10,7 @@ public class LandCharacterFactory implements CharacterFactory {
     private final int pocketSizeMultiplier;
 
     public LandCharacterFactory() {
-        this.strengthMultiplier = 2;
+        this.strengthMultiplier = 3;
         this.pocketSizeMultiplier = 45;
     }
 
