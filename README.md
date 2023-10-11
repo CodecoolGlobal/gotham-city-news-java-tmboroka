@@ -68,8 +68,8 @@ This project is a five hour simulation of Gotham City. Every hour a villain and 
 <!-- GETTING STARTED -->
 <div id="getting-started"></div>
 
-## Getting Started :arrow_forward:	
-
+## Getting Started :arrow_forward:
+<h3>1. option:</h3>
 <div id="prerequisites"></div>
 
 ### Prerequisites :ballot_box_with_check:	
@@ -90,6 +90,31 @@ To run this project, you need to have the following:
 :two: Open the project in IntelliJ and un the application by the "Run" button in the top right corner or with Shift + F10 shortcut
 
 :three: You can observe the simulation in the Terminal
+
+<h3>2.option:</h3>
+### Prerequisites :ballot_box_with_check:
+To run this project, you need to have the following:
+
+:one: Java Development Kit<br>
+
+<div id="installation"></div>
+
+### Installation :floppy_disk:
+
+:one: Clone the repository to your local machine
+   ```sh
+   git clone https://github.com/CodecoolGlobal/gotham-city-news-java-tmboroka
+   ```
+:two: Navigate to the project directory
+   ```sh
+   cd your-directory
+   ```
+:three: Run the application
+```sh
+    java -cp src/main/java/com.codecool.gothamcitynews App
+   ```
+:four: You can observe the simulation in the Terminal
+
 
 <br>
 
